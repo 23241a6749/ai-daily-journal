@@ -1,31 +1,31 @@
 # 📝 AI-Powered Daily Journal
 
-An intelligent web app that helps you **track your thoughts**, **summarize your day**, and **analyze your mood** using **NLP and machine learning**. Built with **React**, **Express**, **MongoDB**, and integrated with **Hugging Face Transformers API**.
+An intelligent web app that helps you **track your thoughts**, **summarize your day**, and **analyze your mood** using **Natural Language Processing** and **Hugging Face models**. Built with **React**, **Express.js**, **MongoDB**, and Hugging Face's Inference API.
 
 ---
 
-## 🚀 Live Demo
+## 🌍 Live Demo
 
-- 🌐 **Frontend**: [https://ai-daily-journal.vercel.app](https://ai-daily-journal.vercel.app)  
-- 🛠️ **Backend API**: [https://ai-daily-journal-api.onrender.com](https://ai-daily-journal-api.onrender.com)
+- 🔗 **Frontend (React on Vercel)**: [https://ai-daily-journal.vercel.app](https://ai-daily-journal.vercel.app)  
+- ⚙️ **Backend (Express on Render)**: [https://ai-daily-journal-api.onrender.com](https://ai-daily-journal-api.onrender.com)
 
 ---
 
 ## ✨ Features
 
-- 📓 Add daily journal entries
-- 🤖 Auto-generated **summary** using BART model
-- 😊 Mood detection using **sentiment analysis**
-- 📜 Timeline view of past entries
-- 🌐 Fully deployed on **Vercel (client)** and **Render (server)**
+- 📝 Create daily journal entries.
+- 🧠 Summarization using the `facebook/bart-large-cnn` model.
+- 😄 Mood detection using `cardiffnlp/twitter-roberta-base-sentiment`.
+- 📅 Timeline view of all entries.
+- 🔐 Environment variable support for secure keys.
 
 ---
 
 ## 🧠 Powered By
 
-- `facebook/bart-large-cnn` for summarization  
-- `cardiffnlp/twitter-roberta-base-sentiment` for mood detection  
-- Hugging Face Inference API
+- 🤗 [facebook/bart-large-cnn](https://huggingface.co/facebook/bart-large-cnn) — summarization
+- 🤗 [cardiffnlp/twitter-roberta-base-sentiment](https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment) — sentiment analysis
+- 🤗 Hugging Face Inference API
 
 ---
 
@@ -37,22 +37,36 @@ An intelligent web app that helps you **track your thoughts**, **summarize your 
 
 ---
 
-## 🧑‍💻 Getting Started (Local Setup)
+## 📁 Folder Structure
 
-### Prerequisites
+```
+ai-daily-journal/
+├── client/     # React frontend
+└── server/     # Express backend + AI + MongoDB
+```
+
+---
+
+## 🚀 Getting Started Locally
+
+### ✅ Prerequisites
 
 - Node.js and npm
 - MongoDB Atlas account
 - Hugging Face API key
 
-### 1. Clone the Repo
+---
+
+### 📦 1. Clone the Repo
 
 ```bash
 git clone https://github.com/23241a6749/ai-daily-journal.git
 cd ai-daily-journal
 ```
 
-### 2. Setup Server (`server/`)
+---
+
+### ⚙️ 2. Setup Server
 
 ```bash
 cd server
@@ -63,8 +77,8 @@ Create a `.env` file:
 
 ```
 PORT=5000
-MONGODB_URI=your_mongodb_uri
-HUGGINGFACE_API_KEY=your_huggingface_key
+MONGODB_URI=your_mongodb_connection_uri
+HUGGINGFACE_API_KEY=your_huggingface_api_key
 ```
 
 Run the server:
@@ -73,20 +87,22 @@ Run the server:
 node index.js
 ```
 
-### 3. Setup Client (`client/`)
+---
+
+### 💻 3. Setup Client
 
 ```bash
 cd ../client
 npm install
 ```
 
-Create `src/config.js`:
+Create a file: `src/config.js`
 
 ```js
 export const API_URL = "https://ai-daily-journal-api.onrender.com";
 ```
 
-Run the client:
+Run the app:
 
 ```bash
 npm start
@@ -94,15 +110,17 @@ npm start
 
 ---
 
-## 🧪 Sample Journal Entry
+## 🧪 Sample Entry
 
-```text
+**Input:**
+
+```
 I had a great day today! I completed my project and spent quality time with my family. Feeling proud and happy.
 ```
 
 **Summary:**
 
-> "I had a great day today! I completed my project and spent quality time with my family," she said. "I'm feeling proud and optimistic."
+> "I had a great day today! I completed my project and spent quality time with my family," she said. "Feeling proud and optimistic."
 
 **Mood:**
 
@@ -110,23 +128,15 @@ I had a great day today! I completed my project and spent quality time with my f
 
 ---
 
-## 📁 Folder Structure
+## 📜 License
 
-```
-ai-daily-journal/
-├── client/     → React frontend
-└── server/     → Express backend + MongoDB + Hugging Face API integration
-```
+Licensed under the [MIT License](LICENSE).
 
 ---
 
-## 🧾 License
-
-This project is licensed under the MIT License.
-
----
-
-## 🤝 Acknowledgements
+## 🙏 Acknowledgements
 
 - Hugging Face Transformers
-- Render & Vercel for hosting
+- MongoDB Atlas
+- Render (for server deployment)
+- Vercel (for frontend hosting)
