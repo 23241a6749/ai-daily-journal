@@ -6,7 +6,7 @@ An intelligent web app that helps you **track your thoughts**, **summarize your 
 
 ## 🌍 Live Demo
 
-- 🔗 **Frontend (React on Vercel)**: (https://ai-daily-journal.vercel.app)  ](https://ai-daily-journal-kw75.vercel.app/)
+- 🔗 **Frontend (React on Vercel)**: (https://ai-daily-journal-kw75.vercel.app/)
 - ⚙️ **Backend (Express on Render)**: [https://ai-daily-journal-api.onrender.com](https://ai-daily-journal-api.onrender.com)
 
 ---
