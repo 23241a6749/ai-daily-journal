@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
+import { API_URL } from './config';
 
 function App() {
   const [content, setContent] = useState('');
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Fetch existing entries
   useEffect(() => {
-    axios.get('http://localhost:5000/api/entries')
+    axios.get(`${API_URL}/api/entries`)
       .then((res) => setEntries(res.data))
       .catch((err) => console.error('Error fetching entries:', err));
   }, []);
 
-  // Submit new entry
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!content.trim()) return;
 
     setLoading(true);
     try {
-      const res = await axios.post('http://localhost:5000/api/entries', { content });
-      setEntries([res.data, ...entries]); // prepend new entry
+      const res = await axios.post(`${API_URL}/api/entries`, { content });
+      setEntries([res.data, ...entries]);
       setContent('');
     } catch (err) {
       console.error('Error saving entry:', err);
